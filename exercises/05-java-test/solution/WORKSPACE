@@ -16,6 +16,7 @@ maven_install(
     artifacts = [
         "org.apache.commons:commons-configuration2:2.7",
         "commons-beanutils:commons-beanutils:1.9.2",
+        "junit:junit:4.13.2"
     ],
     repositories = [
         "https://repo1.maven.org/maven2",

@@ -15,7 +15,7 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 maven_install(
     artifacts = [
         "org.apache.commons:commons-configuration2:2.7",
-        "commons-beanutils:commons-beanutils:1.9.2",
+        "commons-beanutils:commons-beanutils:1.9.2"
     ],
     repositories = [
         "https://repo1.maven.org/maven2",
