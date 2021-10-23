@@ -40,3 +40,28 @@ INFO: Build completed successfully, 1 total action
 profile: production
 version: 1.0.0
 ```
+You can modify the properties in `application.properties` any way you like. Say you changed the values of the two existing properties and added a new one:
+
+```
+profile=development
+version=2.4.9
+commit-hash=ksfasf892
+```
+
+Run the application will parse the properties at runtime and render them on the console.
+
+```
+$ bazel run //:app-binary
+INFO: Analyzed target //:app-binary (0 packages loaded, 0 targets configured).
+INFO: Found 1 target...
+Target //:app-binary up-to-date:
+  bazel-bin/app-binary.jar
+  bazel-bin/app-binary
+INFO: Elapsed time: 0.176s, Critical Path: 0.04s
+INFO: 2 processes: 1 internal, 1 darwin-sandbox.
+INFO: Build completed successfully, 2 total actions
+INFO: Build completed successfully, 2 total actions
+commit-hash: ksfasf892
+profile: development
+version: 2.4.9
+```
