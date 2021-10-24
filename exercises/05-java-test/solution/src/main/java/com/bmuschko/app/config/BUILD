@@ -6,10 +6,10 @@ java_library(
         "//src/test/java/com/bmuschko/app/config:__pkg__"
     ],
     deps = [
-        "@maven//:org_apache_commons_commons_configuration2",
-        "@maven//:commons_beanutils_commons_beanutils"
+        "@maven//:org_apache_commons_commons_configuration2"
     ],
     runtime_deps = [
-        "//src/main/resources:app-resources"
+        "//src/main/resources:app-resources",
+        "@maven//:commons_beanutils_commons_beanutils"
     ]
 )
