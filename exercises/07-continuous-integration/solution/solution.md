@@ -34,5 +34,4 @@ jobs:
 
 Pushing the code will trigger a build. You can find the execution of the build in the "Actions" tab of your repository.
 
-
 ![GitHub Actions](./images/github-actions-bazel.png)
