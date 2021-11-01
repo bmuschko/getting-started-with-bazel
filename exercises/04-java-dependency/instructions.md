@@ -2,6 +2,10 @@
 
 In this exercise, you will declare package dependencies and external Maven dependencies for a Java-based project. We'll want to model the directories `src/main/java/com/bmuschko/app`, `src/main/java/com/bmuschko/app/config`, and `src/main/resources` as fine-grained Bazel packages with dependencies to each other as needed. The class `com.bmuschko.app.config.PropertiesConfigurationReader` uses the external library [Apache Commons Configuration](https://commons.apache.org/proper/commons-configuration/) which needs to be defined as external dependency for the project.
 
+The following image shows the high-level architecture.
+
+![java-binary](imgs/java-dependency.png)
+
 Reference the documentation of the [java_binary rule](https://docs.bazel.build/versions/main/be/java.html#java_binary) and [java_library rule](https://docs.bazel.build/versions/main/be/java.html#java_library) for more information.
 
 1. Inspect the existing source code files in the `start` directory.

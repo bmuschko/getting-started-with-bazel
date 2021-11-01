@@ -2,6 +2,10 @@
 
 In this exercise, you will declare a dependency on a test library for a Java-based project and execute the test classes. Model the directory `src/test/java/com/bmuschko/app/config` as a Bazel package by using the java_test rule.
 
+The following image shows the high-level architecture.
+
+![java-test](imgs/java-test.png)
+
 Reference the documentation of the [java_test rule](https://docs.bazel.build/versions/main/be/java.html#java_test) for more information.
 
 1. Inspect the existing source code files in the `start` directory.
