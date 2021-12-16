@@ -16,7 +16,6 @@ public class PropertiesConfigurationReader implements ConfigurationReader {
         FileBasedConfiguration configuration;
         Parameters params = new Parameters();
 
-
         try {
             FileBasedConfigurationBuilder<FileBasedConfiguration> builder =
                     new FileBasedConfigurationBuilder<FileBasedConfiguration>(PropertiesConfiguration.class)
