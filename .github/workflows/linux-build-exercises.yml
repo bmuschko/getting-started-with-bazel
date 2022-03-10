@@ -1,0 +1,29 @@
+name: Build Exercises [Linux]
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Setup Bazelisk
+        uses: bazelbuild/setup-bazelisk@v1
+      - name: Mount bazel cache
+        uses: actions/cache@v2
+        with:
+          path: "~/.cache/bazel"
+          key: bazel
+      - name: Exercise 1 - Hello World
+        run: cd exercises/01-hello-world/solution; bazel build //...
+      - name: Exercise 2 - Java Binary
+        run: cd exercises/02-java-binary/solution; bazel build //...
+      - name: Exercise 4 - Java Package Dependency
+        run: cd exercises/04-java-package-dependency/solution; bazel build //...
+      - name: Exercise 5 - Java External Dependency
+        run: cd exercises/05-java-external-dependency/solution; bazel build //...
+      - name: Exercise 6 - Java Test
+        run: cd exercises/06-java-test/solution; bazel build //...
+      - name: Exercise 6 - Java Library Publish
+        run: cd exercises/06-java-library-publish/solution; bazel build //...
