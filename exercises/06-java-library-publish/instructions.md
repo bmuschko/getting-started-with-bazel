@@ -1,6 +1,6 @@
 # Exercise 6
 
-In this exercise, you will publish Java library produced by the package `src/main/java/com/bmuschko/app/config` to the Maven Local repository at `~/.4m2/repository`. The generated POM file should contain the dependencies required for the package.
+In this exercise, you will publish Java library produced by the package `src/main/java/com/bmuschko/app/config` to the Maven Local repository at `~/.m2/repository`. The generated POM file should contain the dependencies required for the package.
 
 Reference the documentation of the [java_export rule](https://github.com/bazelbuild/rules_jvm_external#publishing-to-external-repositories) for more information.
 
