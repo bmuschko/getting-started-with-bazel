@@ -4,7 +4,7 @@ In this exercise, you will declare package dependencies for a Java-based project
 
 The following image shows the high-level architecture.
 
-![java-binary](imgs/java-external-dependency.png)
+![java-binary](imgs/java-package-dependency.png)
 
 Reference the documentation of the [java_binary rule](https://docs.bazel.build/versions/main/be/java.html#java_binary) and [java_library rule](https://docs.bazel.build/versions/main/be/java.html#java_library) for more information.
 
