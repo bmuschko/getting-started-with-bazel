@@ -1,4 +1,4 @@
-# Exercise 8
+# Exercise 9
 
 The goal of this exercise is to set up a Continuous Integration job for Bazel build on GitHub Actions. A push to any branch and opening a pull request should trigger a build execution. Use [Bazelisk](https://github.com/bazelbuild/bazelisk) to download the Bazel runtime.
 

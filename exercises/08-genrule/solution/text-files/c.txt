@@ -1,0 +1,1 @@
+When opened by a text editor, human-readable content is presented to the user.
