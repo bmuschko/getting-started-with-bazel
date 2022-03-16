@@ -10,12 +10,12 @@ Add the genrule to the `BUILD` file. Point the input sources to all files in the
 
 ```
 genrule(
-  name = "zip-txt-files",
-  srcs = glob(["text-files/**"]),
-  cmd = "zip -r $(OUTS) $(SRCS)",
-  outs = [
-    "all-text-files.zip",
-  ],
+    name = "zip-txt-files",
+    srcs = glob(["text-files/**"]),
+    cmd = "zip -r $(OUTS) $(SRCS)",
+    outs = [
+        "all-text-files.zip",
+    ],
 )
 ```
 
