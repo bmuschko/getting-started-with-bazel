@@ -1,5 +1,7 @@
 # Solution
 
+The solution will only show the usage of the IntelliJ plugin. Explore other IDE integrations on your own.
+
 ## IntelliJ Plugin
 
 The plugin can be installed from the menu item _IntelliJ IDEA > Preferences... > Plugins_. You can install updates at any time from the same location.
