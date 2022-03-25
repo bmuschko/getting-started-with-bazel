@@ -11,4 +11,4 @@ Reference the documentation of the [java_binary rule](https://docs.bazel.build/v
 1. Inspect the existing source code files in the `start` directory.
 2. Define a `WORKSPACE` file in the root directory of `start`. Leave the file empty for now.
 3. Define a `BUILD` file for the individual directories mentioned above. The package `src/main/java/com/bmuschko/app` should use the java_binary rule. The package `src/main/java/com/bmuschko/app/config` and `src/main/resources` should use the java_library rule. Define package dependencies and visibility as you see fit.
-4. Run the main class `com.bmuschko.app.Application` of the compiled program. Ensure that the error message indicates that the external dependency cannot be resolved.
+4. Run the main class `com.bmuschko.app.Application` of the compiled program. The program should be compilable and runnable.
