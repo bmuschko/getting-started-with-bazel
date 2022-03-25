@@ -4,7 +4,7 @@ Excercise will require the tooling listed below. Ensure that all of those tools 
 
 ## Tools and Accounts
 
-* An installation of Bazel ([instructions](https://docs.bazel.build/versions/main/install.html)) or Bazelisk ([instructions](https://github.com/bazelbuild/bazelisk))
+* An installation of Bazel ([instructions](https://docs.bazel.build/versions/main/install.html)) or Bazelisk ([instructions](https://github.com/bazelbuild/bazelisk)). You are encourages to Bazelisk so that individual exercises can use the Bazel version they are compatible with.
 * An existing GitHub account ([instructions](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account))
 * An installation of OpenJDK 11 ([instructions](https://openjdk.java.net/install/))
 
