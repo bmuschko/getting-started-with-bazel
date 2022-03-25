@@ -6,55 +6,14 @@ Navigate to the `start` directory.
 $ cd start
 ```
 
-Create the `WORKSPACE` file in the root directory. There's no need to add content to the file.
-
-```
-$ touch WORKSPACE
-```
-
-The `src/main/java/com/bmuschko/app/BUILD` file looks as follows. It needs to have a package dependency on the java library created by the `config` package.
-
-```
-java_binary(
-    name = "app-binary",
-    srcs = ["Application.java"],
-    main_class = "com.bmuschko.app.Application",
-    deps = [
-        "//src/main/java/com/bmuschko/app/config:app-lib"
-    ]
-)
-```
-
-The `src/main/java/com/bmuschko/app/config/BUILD` file looks as follows. It needs to have a dependency on the java library created by the `resources` package. Notice that we only need the resources at runtime and not compile-time. To be consumed, this package needs to change its visibility.
-
-```
-java_library(
-    name = "app-lib",
-    srcs = glob(["*.java"]),
-    visibility = ["//src/main/java/com/bmuschko/app:__pkg__"],
-    runtime_deps = [
-        "//src/main/resources:app-resources"
-    ]
-)
-```
-
-The `src/main/resources/BUILD` file looks as follows. It needs to bundle the property files and make itself consumable from the `config` package.
-
-```
-java_library(
-    name = "app-resources",
-    srcs = glob(["*.properties"]),
-    visibility = ["//src/main/java/com/bmuschko/app/config:__pkg__"]
-)
-```
-
 Executing the build produces a compilation error because the external library is not available on the classpath.
 
 ```
 $ bazel run //src/main/java/com/bmuschko/app:app-binary
-INFO: Analyzed target //src/main/java/com/bmuschko/app:app-binary (26 packages loaded, 670 targets configured).
+Starting local Bazel server and connecting to it...
+INFO: Analyzed target //src/main/java/com/bmuschko/app:app-binary (47 packages loaded, 978 targets configured).
 INFO: Found 1 target...
-ERROR: /Users/bmuschko/dev/projects/getting-started-with-bazel/exercises/04-java-dependency/start/src/main/java/com/bmuschko/app/config/BUILD:1:13: Building src/main/java/com/bmuschko/app/config/libapp-lib.jar (2 source files) failed: (Exit 1): java failed: error executing command external/remotejdk11_macos/bin/java -XX:+UseParallelOldGC -XX:-CompactStrings '--patch-module=java.compiler=external/remote_java_tools_darwin/java_tools/java_compiler.jar' ... (remaining 15 argument(s) skipped)
+ERROR: /Users/bmuschko/dev/projects/getting-started-with-bazel/exercises/05-java-external-dependency/start/src/main/java/com/bmuschko/app/config/BUILD:1:13: Building src/main/java/com/bmuschko/app/config/libapp-lib.jar (2 source files) failed: (Exit 1): java failed: error executing command external/remotejdk11_macos/bin/java -XX:-CompactStrings '--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED' '--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED' ... (remaining 17 arguments skipped)
 src/main/java/com/bmuschko/app/config/PropertiesConfigurationReader.java:3: error: package org.apache.commons.configuration2 does not exist
 import org.apache.commons.configuration2.FileBasedConfiguration;
                                         ^
@@ -85,39 +44,39 @@ src/main/java/com/bmuschko/app/config/PropertiesConfigurationReader.java:17: err
                                 ^
   symbol:   class Parameters
   location: class PropertiesConfigurationReader
-src/main/java/com/bmuschko/app/config/PropertiesConfigurationReader.java:21: error: cannot find symbol
+src/main/java/com/bmuschko/app/config/PropertiesConfigurationReader.java:20: error: cannot find symbol
             FileBasedConfigurationBuilder<FileBasedConfiguration> builder =
             ^
   symbol:   class FileBasedConfigurationBuilder
   location: class PropertiesConfigurationReader
-src/main/java/com/bmuschko/app/config/PropertiesConfigurationReader.java:21: error: cannot find symbol
+src/main/java/com/bmuschko/app/config/PropertiesConfigurationReader.java:20: error: cannot find symbol
             FileBasedConfigurationBuilder<FileBasedConfiguration> builder =
                                           ^
   symbol:   class FileBasedConfiguration
   location: class PropertiesConfigurationReader
-src/main/java/com/bmuschko/app/config/PropertiesConfigurationReader.java:22: error: cannot find symbol
+src/main/java/com/bmuschko/app/config/PropertiesConfigurationReader.java:21: error: cannot find symbol
                     new FileBasedConfigurationBuilder<FileBasedConfiguration>(PropertiesConfiguration.class)
                         ^
   symbol:   class FileBasedConfigurationBuilder
   location: class PropertiesConfigurationReader
-src/main/java/com/bmuschko/app/config/PropertiesConfigurationReader.java:22: error: cannot find symbol
+src/main/java/com/bmuschko/app/config/PropertiesConfigurationReader.java:21: error: cannot find symbol
                     new FileBasedConfigurationBuilder<FileBasedConfiguration>(PropertiesConfiguration.class)
                                                       ^
   symbol:   class FileBasedConfiguration
   location: class PropertiesConfigurationReader
-src/main/java/com/bmuschko/app/config/PropertiesConfigurationReader.java:22: error: cannot find symbol
+src/main/java/com/bmuschko/app/config/PropertiesConfigurationReader.java:21: error: cannot find symbol
                     new FileBasedConfigurationBuilder<FileBasedConfiguration>(PropertiesConfiguration.class)
                                                                               ^
   symbol:   class PropertiesConfiguration
   location: class PropertiesConfigurationReader
-src/main/java/com/bmuschko/app/config/PropertiesConfigurationReader.java:26: error: cannot find symbol
+src/main/java/com/bmuschko/app/config/PropertiesConfigurationReader.java:25: error: cannot find symbol
         } catch (ConfigurationException e) {
                  ^
   symbol:   class ConfigurationException
   location: class PropertiesConfigurationReader
 Target //src/main/java/com/bmuschko/app:app-binary failed to build
 Use --verbose_failures to see the command lines of failed build steps.
-INFO: Elapsed time: 17.905s, Critical Path: 4.83s
+INFO: Elapsed time: 23.265s, Critical Path: 4.77s
 INFO: 11 processes: 6 internal, 4 darwin-sandbox, 1 worker.
 FAILED: Build did NOT complete successfully
 FAILED: Build did NOT complete successfully
