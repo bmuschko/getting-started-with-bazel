@@ -43,7 +43,7 @@ The `src/main/resources/BUILD` file looks as follows. It needs to bundle the pro
 ```
 java_library(
     name = "app-resources",
-    srcs = glob(["*.properties"]),
+    resources = glob(["*.properties"]),
     visibility = ["//src/main/java/com/bmuschko/app/config:__pkg__"]
 )
 ```
