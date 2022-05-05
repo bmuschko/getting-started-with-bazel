@@ -1,5 +1,5 @@
 java_library(
     name = "app-resources",
-    srcs = glob(["*.properties"]),
+    resources = glob(["*.properties"]),
     visibility = ["//src/main/java/com/bmuschko/app/config:__pkg__"]
 )
