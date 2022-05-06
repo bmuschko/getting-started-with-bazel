@@ -1,6 +1,6 @@
 # Exercise 2
 
-In this exercise, you will create the build logic for a Java-based project. The source code contains of a main class as the entrypoint of the program and a supporting set of classes. When executed, the program reads a properties file available on the classpath and prints the key-value pairs of the file to standard output. Reference the documentation of the [java_binary rule](https://docs.bazel.build/versions/main/be/java.html#java_binary) for more information.
+In this exercise, you will create the build logic for a Java-based project. The source code contains of a main class as the entrypoint of the program and a supporting set of classes. When executed, the program reads a properties file available on the classpath and prints the key-value pairs of the file to standard output. Reference the documentation of the [java_binary rule](https://bazel.build/reference/be/java#java_binary) for more information.
 
 The following image shows the high-level architecture.
 
