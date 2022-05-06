@@ -6,7 +6,7 @@ The following image shows the high-level architecture.
 
 ![java-binary](imgs/java-external-dependency.png)
 
-Reference the documentation of the [java_binary rule](https://docs.bazel.build/versions/main/be/java.html#java_binary) and [java_library rule](https://docs.bazel.build/versions/main/be/java.html#java_library) for more information.
+Reference the documentation of the [java_binary rule](https://bazel.build/reference/be/java#java_binary) and [java_library rule](https://bazel.build/reference/be/java#java_library) for more information.
 
 1. Inspect the existing source code files in the `start` directory.
 2. Run the main class `com.bmuschko.app.Application` of the compiled program. Ensure that the error message indicates that the external dependency cannot be resolved.
