@@ -6,7 +6,7 @@ The following image shows the high-level architecture.
 
 ![java-test](imgs/java-test.png)
 
-Reference the documentation of the [java_test rule](https://docs.bazel.build/versions/main/be/java.html#java_test) for more information.
+Reference the documentation of the [java_test rule](https://bazel.build/reference/be/java#java_test) for more information.
 
 1. Inspect the existing source code files in the `start` directory.
 2. Declare a dependency on `junit:junit:4.13.2` available in the repository [Maven Central](https://repo1.maven.org/maven2).
