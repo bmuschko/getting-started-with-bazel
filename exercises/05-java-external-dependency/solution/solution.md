@@ -109,7 +109,7 @@ maven_install(
 )
 ```
 
-Modify the `config` package definition by adding the external dependency.
+Modify the `src/main/java/com/bmuschko/app/config/BUILD` file by adding the external dependency.
 
 ```
 java_library(
