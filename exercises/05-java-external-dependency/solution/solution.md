@@ -173,7 +173,7 @@ maven_install(
 )
 ```
 
-In the `config` package, reference the artifact as a runtime dependency.
+In the `src/main/java/com/bmuschko/app/config/BUILD` file, reference the artifact as a runtime dependency.
 
 ```
 java_library(
