@@ -9,7 +9,7 @@ $ cd start
 Executing the build produces a compilation error because the external library is not available on the classpath.
 
 ```
-$ bazel run //src/main/java/com/bmuschko/app:app-binary
+$ bazelisk run //src/main/java/com/bmuschko/app:app-binary
 Starting local Bazel server and connecting to it...
 INFO: Analyzed target //src/main/java/com/bmuschko/app:app-binary (47 packages loaded, 978 targets configured).
 INFO: Found 1 target...
@@ -128,7 +128,7 @@ java_library(
 Executing the `run` command results in a runtime error. The class `org/apache/commons/beanutils/DynaBean` cannot be found on the runtime classpath. The rules_jvm_external do not resolve the transitive closure of dependencies based on the provided POM and therefore requires an explicit declaration of transitive dependencies.
 
 ```
-$ bazel run //src/main/java/com/bmuschko/app:app-binary
+$ bazelisk run //src/main/java/com/bmuschko/app:app-binary
 INFO: Analyzed target //src/main/java/com/bmuschko/app:app-binary (8 packages loaded, 299 targets configured).
 INFO: Found 1 target...
 Target //src/main/java/com/bmuschko/app:app-binary up-to-date:
@@ -194,7 +194,7 @@ java_library(
 You can now properly run the program.
 
 ```
-$ bazel run //src/main/java/com/bmuschko/app:app-binary
+$ bazelisk run //src/main/java/com/bmuschko/app:app-binary
 INFO: Analyzed target //src/main/java/com/bmuschko/app:app-binary (1 packages loaded, 8 targets configured).
 INFO: Found 1 target...
 Target //src/main/java/com/bmuschko/app:app-binary up-to-date:

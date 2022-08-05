@@ -22,7 +22,7 @@ genrule(
 When you run the target `zip-txt-files` all files found in the directory `text-files` will be zipped up.
 
 ```
-$ bazel build //:zip-txt-files
+$ bazelisk build //:zip-txt-files
 
 INFO: Analyzed target //:zip-txt-files (5 packages loaded, 10 targets configured).
 INFO: Found 1 target...

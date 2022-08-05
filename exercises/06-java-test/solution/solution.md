@@ -38,7 +38,7 @@ java_test(
 Executing the `test` command will notify you about the inadequate visibility of the package under test.
 
 ```
-$ bazel test //src/test/java/com/bmuschko/app/config:app-config-test
+$ bazelisk test //src/test/java/com/bmuschko/app/config:app-config-test
 ERROR: /Users/bmuschko/dev/projects/getting-started-with-bazel/exercises/05-java-test/start/src/test/java/com/bmuschko/app/config/BUILD:1:10: in java_test rule //src/test/java/com/bmuschko/app/config:app-config-test: target '//src/main/java/com/bmuschko/app/config:app-lib' is not visible from target '//src/test/java/com/bmuschko/app/config:app-config-test'. Check the visibility declaration of the former target if you think the dependency is legitimate
 ERROR: Analysis of target '//src/test/java/com/bmuschko/app/config:app-config-test' failed; build aborted: Analysis of target '//src/test/java/com/bmuschko/app/config:app-config-test' failed
 INFO: Elapsed time: 13.129s
@@ -68,7 +68,7 @@ java_library(
 Running the command again will execute the test suite. The single test case should show the `PASSED` status.
 
 ```
-$ bazel test //src/test/java/com/bmuschko/app/config:app-config-test
+$ bazelisk test //src/test/java/com/bmuschko/app/config:app-config-test
 INFO: Analyzed target //src/test/java/com/bmuschko/app/config:app-config-test (2 packages loaded, 7 targets configured).
 INFO: Found 1 test target...
 Target //src/test/java/com/bmuschko/app/config:app-config-test up-to-date:

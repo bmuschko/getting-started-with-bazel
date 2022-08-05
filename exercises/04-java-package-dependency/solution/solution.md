@@ -51,7 +51,7 @@ java_library(
 You can now properly run the program.
 
 ```
-$ bazel run //src/main/java/com/bmuschko/app:app-binary
+$ bazelisk run //src/main/java/com/bmuschko/app:app-binary
 Starting local Bazel server and connecting to it...
 INFO: Analyzed target //src/main/java/com/bmuschko/app:app-binary (47 packages loaded, 978 targets configured).
 INFO: Found 1 target...

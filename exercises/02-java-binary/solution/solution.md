@@ -26,7 +26,7 @@ java_binary(
 Running the application will print two different properties that have been processed from the `application.properties` file.
 
 ```
-$ bazel run //:app-binary
+$ bazelisk run //:app-binary
 Starting local Bazel server and connecting to it...
 INFO: Analyzed target //:app-binary (24 packages loaded, 668 targets configured).
 INFO: Found 1 target...
@@ -51,7 +51,7 @@ commit-hash=ksfasf892
 Run the application will parse the properties at runtime and render them on the console.
 
 ```
-$ bazel run //:app-binary
+$ bazelisk run //:app-binary
 INFO: Analyzed target //:app-binary (0 packages loaded, 0 targets configured).
 INFO: Found 1 target...
 Target //:app-binary up-to-date:

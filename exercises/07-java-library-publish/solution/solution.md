@@ -27,7 +27,7 @@ java_export(
 Publish the artifact and its POM to the standard Maven Local directory.
 
 ```
-$ bazel run --define "maven_repo=file://$HOME/.m2/repository" //src/main/java/com/bmuschko/app/config:app-config-lib-export.publish
+$ bazelisk run --define "maven_repo=file://$HOME/.m2/repository" //src/main/java/com/bmuschko/app/config:app-config-lib-export.publish
 INFO: Build option --define has changed, discarding analysis cache.
 INFO: Analyzed target //src/main/java/com/bmuschko/app/config:app-config-lib-export.publish (1 packages loaded, 900 targets configured).
 INFO: Found 1 target...
