@@ -6,7 +6,7 @@ Navigate to the `start` directory.
 $ cd start
 ```
 
-Modify the existing `WORKSPACE` file by added the JUnit dependency.
+Modify the existing `WORKSPACE` file by adding the JUnit dependency.
 
 ```
 maven_install(
