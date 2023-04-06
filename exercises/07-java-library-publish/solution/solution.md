@@ -6,7 +6,7 @@ Navigate to the `start` directory.
 $ cd start
 ```
 
-Add the `java_export` rule to `src/main/java/com/bmuschko/app/config/BUILD` file as follows.
+Add the `java_export` rule to the `src/main/java/com/bmuschko/app/config/BUILD` file as follows.
 
 ```
 load("@rules_jvm_external//:defs.bzl", "java_export")
