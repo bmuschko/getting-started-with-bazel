@@ -159,13 +159,13 @@ Caused by: java.lang.ClassNotFoundException: org.apache.commons.beanutils.DynaBe
 	... 13 more
 ```
 
-To fix the issue, add the dependency with the GAV `commons-beanutils:commons-beanutils:1.9.2` to the list of dependencies in the `WORKSPACE` file.
+To fix the issue, add the dependency with the GAV `commons-beanutils:commons-beanutils:1.9.4` to the list of dependencies in the `WORKSPACE` file.
 
 ```
 maven_install(
     artifacts = [
         "org.apache.commons:commons-configuration2:2.7",
-        "commons-beanutils:commons-beanutils:1.9.2",
+        "commons-beanutils:commons-beanutils:1.9.4",
     ],
     repositories = [
         "https://repo1.maven.org/maven2",
