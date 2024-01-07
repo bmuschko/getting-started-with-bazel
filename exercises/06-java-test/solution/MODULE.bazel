@@ -1,0 +1,10 @@
+bazel_dep(name = "rules_jvm_external", version = "4.5")
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+maven.install(
+    artifacts = [
+        "org.apache.commons:commons-configuration2:2.7",
+        "commons-beanutils:commons-beanutils:1.9.4",
+        "junit:junit:4.13.2"
+    ],
+)
+use_repo(maven, "maven")
