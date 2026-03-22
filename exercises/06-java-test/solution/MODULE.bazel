@@ -1,4 +1,4 @@
-bazel_dep(name = "rules_jvm_external", version = "4.5")
+bazel_dep(name = "rules_jvm_external", version = "6.10")
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 maven.install(
     artifacts = [
