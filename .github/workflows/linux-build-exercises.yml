@@ -1,31 +1,37 @@
-name: Build Exercises [Linux]
+name: Build Exercises
 on: [push, pull_request]
 
 jobs:
   build:
-    name: Build
-    runs-on: ubuntu-24.04
+    name: Build (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-latest]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v3
-      - name: Mount bazel cache
-        uses: actions/cache@v4
-        with:
-          path: "~/.cache/bazel"
-          key: bazel
       - name: Exercise 1 - Hello World
-        run: cd exercises/01-hello-world/solution; bazel build //...
+        working-directory: exercises/01-hello-world/solution
+        run: bazel build //...
       - name: Exercise 2 - Java Binary
-        run: cd exercises/02-java-binary/solution; bazel build //...
+        working-directory: exercises/02-java-binary/solution
+        run: bazel build //...
       - name: Exercise 4 - Java Package Dependency
-        run: cd exercises/04-java-package-dependency/solution; bazel build //...
+        working-directory: exercises/04-java-package-dependency/solution
+        run: bazel build //...
       - name: Exercise 5 - Java External Dependency
-        run: cd exercises/05-java-external-dependency/solution; bazel build //...
+        working-directory: exercises/05-java-external-dependency/solution
+        run: bazel build //...
       - name: Exercise 6 - Java Test
-        run: cd exercises/06-java-test/solution; bazel build //...
+        working-directory: exercises/06-java-test/solution
+        run: bazel build //...
       - name: Exercise 7 - Java Library Publish
-        run: cd exercises/07-java-library-publish/solution; bazel build //...
+        working-directory: exercises/07-java-library-publish/solution
+        run: bazel build //...
       - name: Exercise 8 - Genrule
-        run: cd exercises/08-genrule/solution; bazel build //:zip-txt-files
+        working-directory: exercises/08-genrule/solution
+        run: bazel build //:zip-txt-files
